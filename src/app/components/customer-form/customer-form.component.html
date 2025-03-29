@@ -1,0 +1,57 @@
+<div class="container">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Cadastro de Clientes</mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content>
+      <form [formGroup]="customerForm" (ngSubmit)="onSubmit()">
+        <mat-form-field appearance="fill">
+          <mat-label>Nome</mat-label>
+          <input matInput formControlName="nome" required />
+          <mat-error *ngIf="customerForm.get('nome')?.hasError('required')">
+            Nome é obrigatório
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Idade</mat-label>
+          <input matInput type="number" formControlName="idade" />
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Sistema Conector</mat-label>
+          <mat-select formControlName="sistemaConector">
+            <mat-option value="Sistema A">Sistema A</mat-option>
+            <mat-option value="Sistema B">Sistema B</mat-option>
+            <mat-option value="Sistema C">Sistema C</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-checkbox formControlName="ativo">Cliente Ativo</mat-checkbox>
+
+        <div class="radio-group">
+          <label>Tipo de Cliente:</label>
+          <mat-radio-group formControlName="tipoCliente">
+            <mat-radio-button value="regular">Regular</mat-radio-button>
+            <mat-radio-button value="premium">Premium</mat-radio-button>
+          </mat-radio-group>
+        </div>
+
+        <div class="button-group">
+          <button
+            mat-raised-button
+            color="primary"
+            type="submit"
+            [disabled]="!customerForm.valid"
+          >
+            Salvar
+          </button>
+          <button mat-raised-button type="button" (click)="onCancel()">
+            Cancelar
+          </button>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

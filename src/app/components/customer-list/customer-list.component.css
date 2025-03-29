@@ -1,0 +1,36 @@
+.container {
+  padding: 20px;
+}
+
+.search-field {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.table-container {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  min-width: 600px;
+}
+
+.mat-column-actions {
+  width: 120px;
+  text-align: center;
+}
+
+.add-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+
+.mat-column-ativo {
+  width: 80px;
+}
+
+.mat-column-idade {
+  width: 80px;
+}
